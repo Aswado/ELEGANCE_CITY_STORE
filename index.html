@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ELEGANCE CITY — Store</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/512.png" sizes="512x512">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD&components=buttons"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.jpeg" alt="ELEGANCE CITY logo" class="logo">
+      <div class="brand-text">
+        <strong>ELEGANCE CITY</strong>
+        <span data-i18n="tagline">Premium Gaming & Digital Goods</span>
+      </div>
+    </div>
+    <div class="lang-switch">
+      <button data-lang="en" aria-label="English">EN</button>
+      <button data-lang="de" aria-label="Deutsch">DE</button>
+      <button data-lang="ar" aria-label="العربية">AR</button>
+    </div>
+  </header>
+
+  <div class="promo-bar">
+    <div class="promo-inner">
+      <span class="promo-text" data-i18n="sale_banner">SALE: Up to 40% off all products</span>
+      <div class="coupon-box">
+        <input id="passInput" type="password" placeholder="Password" aria-label="Password" />
+        <button id="passBtn" class="unlock-btn" data-i18n="unlock_discount">Unlock Discount</button>
+        <span id="passState" class="pass-state"></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <img src="assets/logo.jpeg" alt="ELEGANCE CITY Logo" class="hero-logo">
+    <div class="hero-overlay">
+      <h1>ELEGANCE CITY</h1>
+      <p data-i18n="hero_sub">High-quality items. Yellow & Black elegance.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <aside class="filters">
+      <h3 data-i18n="categories_title">Categories</h3>
+      <ul id="categoryList"></ul>
+      <div class="notice">
+        <p data-i18n="paypal_only"><strong>Payment:</strong> PayPal only</p>
+      </div>
+    </aside>
+
+    <section class="catalog">
+      <div id="productGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> ELEGANCE CITY • <span data-i18n="footer_all_rights">All rights reserved.</span></p>
+  </footer>
+
+  <template id="productCardTmpl">
+    <article class="card">
+      <div class="thumb" style="background-image:url('assets/logo.jpeg')"><span class="badge" id="discBadge">-40%</span></div>
+      <div class="card-body">
+        <h4 class="title"></h4>
+        <p class="category"></p>
+        <div class="price-row">
+          <div class="prices"><span class="price-old"></span><span class="price"></span></div>
+          <button class="buy-btn" data-i18n="buy_now">Buy with PayPal</button>
+        </div>
+        <div class="paypal-slot"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="main.js"></script>
+</body>
+</html>
